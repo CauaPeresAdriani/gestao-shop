@@ -70,3 +70,6 @@ desktop.ini
 src/gestao_shop/ConexaoMySQL.java
 config.properties
 application.properties
+nbproject/
+build.xml
+manifest.mf
