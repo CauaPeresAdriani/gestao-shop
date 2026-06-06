@@ -37,7 +37,7 @@ Sistema desktop de gestão de loja desenvolvido em **Java + Swing** com banco de
 ### 2. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/gestao-shop.git
+git clone https://github.com/CauaPeresAdriani/gestao-shop.git
 cd gestao-shop
 ```
 
