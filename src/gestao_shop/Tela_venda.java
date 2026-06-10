@@ -75,7 +75,7 @@ public class Tela_venda extends javax.swing.JFrame {
         jLabel1.setText("VENDAS");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setText("Quanridade: ");
+        jLabel2.setText("Quantidade: ");
 
         idProdutoTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

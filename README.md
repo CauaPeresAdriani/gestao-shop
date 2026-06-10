@@ -4,13 +4,48 @@ Sistema desktop de gestão de loja desenvolvido em **Java + Swing** com banco de
 
 ---
 
+## 📸 Screenshots
+
+### Login
+<img src="docs/Login.png" width="700">
+
+### Tela Principal — Gerente
+<img src="docs/TelaGerente.png" width="700">
+
+### Tela Principal — Vendedor
+<img src="docs/TelaVendedor.png" width="700">
+
+### Cadastro de Produto
+<img src="docs/CadastroProduto.png" width="700">
+
+### Cadastro de Usuário
+<img src="docs/CadastroUsuario.png" width="700">
+
+### Vendas
+<img src="docs/Vendas.png" width="700">
+
+---
+
 ## ✨ Funcionalidades
 
-- 🔐 Login de gerente com autenticação
+- 🔐 Autenticação de usuários com perfis (Gerente / Vendedor)
 - 📦 Cadastro e consulta de produtos
 - 👤 Cadastro de usuários
 - 🛍️ Registro de vendas
 - 🖥️ Interface gráfica com Java Swing
+
+---
+
+## 🏗️ Arquitetura
+
+O sistema foi desenvolvido utilizando **Java Swing** para interface gráfica e **MySQL** para persistência de dados, com conexão via **JDBC**.
+
+As funcionalidades incluem:
+- Autenticação de usuários com controle de perfil
+- CRUD de produtos
+- CRUD de usuários
+- Registro de vendas
+- Consultas ao banco de dados via JDBC
 
 ---
 
@@ -37,35 +72,20 @@ Sistema desktop de gestão de loja desenvolvido em **Java + Swing** com banco de
 ### 2. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-usuario/gestao-shop.git
+git clone https://github.com/CauaPeresAdriani/gestao-shop.git
 cd gestao-shop
 ```
 
 ### 3. Configure o banco de dados
 
 ```bash
-# Acesse o MySQL
-mysql -u root -p
-
-# Crie o banco
-CREATE DATABASE gestao_shop;
-USE gestao_shop;
-```
-
-Importe o script SQL (se houver na pasta `/sql`):
-```bash
-mysql -u root -p gestao_shop < sql/gestao_shop.sql
+mysql -u root -p -e "CREATE DATABASE gestao_shop;"
+mysql -u root -p gestao_shop < gestao_shop.sql
 ```
 
 ### 4. Configure a conexão
 
-Copie o arquivo de exemplo e ajuste com suas credenciais:
-
-```bash
-cp src/gestao_shop/ConexaoMySQL.example.java src/gestao_shop/ConexaoMySQL.java
-```
-
-Ou configure via variáveis de ambiente (recomendado):
+Edite `src/gestao_shop/ConexaoMySQL.java` com suas credenciais, ou use variáveis de ambiente:
 
 ```bash
 export DB_HOST=localhost
@@ -78,10 +98,7 @@ export DB_PASSWORD=suasenha
 ### 5. Compile e execute
 
 ```bash
-# Compilar e gerar JAR
 mvn clean package
-
-# Executar
 java -jar target/gestao-shop.jar
 ```
 
@@ -93,19 +110,19 @@ java -jar target/gestao-shop.jar
 gestao-shop/
 ├── src/
 │   └── gestao_shop/
-│       ├── Gestao_Shop.java           # Ponto de entrada
-│       ├── ConexaoMySQL.java          # Conexão com banco (não versionado)
-│       ├── ConexaoMySQL.example.java  # Exemplo de configuração
+│       ├── Gestao_Shop.java                # Ponto de entrada
+│       ├── ConexaoMySQL.java               # Conexão com banco (não versionado)
 │       ├── Banco_Main.java
-│       ├── Produto.java
+│       ├── Produto.java / Usuario.java / Venda.java / TipoUsuario.java
 │       ├── Tela_venda.java / .form
 │       ├── TelaLogin.java / .form
 │       ├── TelaPrincipalGerente.java / .form
+│       ├── TelaPrincipalVendedor.java / .form
 │       ├── TelaCadastroUsuario.java / .form
 │       └── Consultar_Produto.java / .form
-├── sql/                               # Scripts SQL (crie esta pasta)
-├── IMG/                               # Recursos de imagem
-├── pom.xml                            # Configuração Maven
+├── docs/                                   # Screenshots
+├── gestao_shop.sql                         # Script do banco
+├── pom.xml                                 # Configuração Maven
 └── .gitignore
 ```
 
@@ -114,25 +131,25 @@ gestao-shop/
 ## ⚙️ Instalando MySQL no Linux
 
 ```bash
-# Ubuntu / Debian
 sudo apt update
 sudo apt install mysql-server -y
 sudo systemctl start mysql
 sudo systemctl enable mysql
-
-# Configurar senha do root
 sudo mysql_secure_installation
-
-# Acessar
-mysql -u root -p
 ```
 
 ---
 
-## 📝 Licença
+## 📝 Observações
 
-Este projeto é de uso pessoal / educacional.
+Projeto desenvolvido para fins de estudo e aprendizado de Java Desktop.
 
+Melhorias futuras planejadas:
+- Criptografia de senhas
+- Separação em camadas (DAO / Service)
+- Melhor tratamento de exceções
+- Testes automatizados
+- Design
 ---
 
 *Desenvolvido com ☕ Java*
