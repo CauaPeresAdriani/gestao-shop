@@ -3,6 +3,9 @@
 Sistema desktop de gestão de loja desenvolvido em **Java + Swing** com banco de dados **MySQL**.
 
 ---
+## 🎥 Demonstração
+
+![Demo](docs/demo.gif)
 
 ## 📸 Screenshots
 
